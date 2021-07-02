@@ -24,7 +24,7 @@ function calculateMoney(){
 
         rateText.innerText = ` 1 ${one} = ${rate} ${two}`
 
-        amount_two.value = amount_one.value*rate
+        amount_two.value = (amount_one.value*rate).toFixed(2)
     })
 }
 
