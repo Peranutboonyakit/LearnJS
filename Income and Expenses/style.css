@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root{
+    --box-shadow : 0 1px 3px rgba(0,0,0,0.12)
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body{
+    display: flex;
+    background-color: #f7f7f7;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+}
+
+.container{
+    margin: 30px auto;
+    width: 350px;
+}
+h1{
+    letter-spacing: 1px;
+    margin: 0;
+}
+h3{
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+}
+.income-expense-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin: 20px 0;
+}
+.income-expense-container>div{
+    flex: 1;
+    text-align: center;
+}
+.income-expense-container>div:first-of-type{
+    border-right: 1px solid #dedede;
+}
+.money-plus{
+    color: rgb(21, 216, 21);
+}
+.money-minus{
+    color: red;
+}
+label{
+    display: block;
+    margin: 10px 0;
+}
+input{
+    border: 1px solid #dede;
+    border-radius: 2px;
+    padding: 10px;
+    width: 100%;
+}
+.btn{
+    margin: 10px 0;
+    background-color:salmon;
+    padding: 10px;
+    color: #ffff;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    font-size: 16px;
+}
