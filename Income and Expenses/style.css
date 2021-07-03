@@ -14,7 +14,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* min-height: 100vh; */
+    min-height: 100vh;
 }
 
 .container{
@@ -70,4 +70,40 @@ input{
     box-shadow: var(--box-shadow);
     width: 100%;
     font-size: 16px;
+}
+.delete-btn{
+    cursor: pointer;
+    background-color: red;
+    color: #fff;
+    border: 0;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    left: 0;
+    transform: translate(-100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.list li:hover .delete-btn{
+    opacity: 1;
+}
+.list{
+    list-style: none;
+}
+.list li{
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+}
+.list li.plus{
+    border-right: 5px solid #2ecc71;
+}
+.list li.minus{
+    border-right: 5px solid red;
 }
