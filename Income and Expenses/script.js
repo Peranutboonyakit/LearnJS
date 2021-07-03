@@ -6,14 +6,11 @@ const form = document.getElementById("form");
 const text = document.getElementById("text");
 const amount = document.getElementById("amount");
 
-const history = [
-  { id: 1, text: "ค่าขนม", amount: -1000 },
-  { id: 2, text: "เงินเดือน", amount: +50000 },
-  { id: 3, text: "ค่ารถ", amount: -1500 },
-];
+let history = [];
 
 
 function init(){
+    list.innerHTML = '';
     //Loop Data
     history.forEach(addData);
     calculateMoney();
@@ -26,7 +23,7 @@ function addData(history){
 
     //Create tag li & innerHTML
     const item = document.createElement('li');
-    item.innerHTML=`${history.text} <span>${symbol}${Math.abs(history.amount)}</span><button class="delete-btn">X</button>`
+    item.innerHTML=`${history.text} <span>${symbol}${Math.abs(history.amount)}</span><button class="delete-btn" onclick='remove(${history.id})'>X</button>`
     list.appendChild(item)
     item.classList.add(status);
 }
@@ -48,7 +45,35 @@ function calculateMoney(){
     money_minus.innerText = `฿`+ formatNumber(expense);
 }
 
+form.addEventListener('submit', submit);
+function submit(e){
+    e.preventDefault();
+    //Check Empty
+    if(text.value.trim()==='' || amount.value.trim()===''){
+        alert('Enter list and amount...')
+    }else{
+        const data = {
+            id: autoID(),
+            text: text.value,
+            amount: +amount.value
+        }
+        history.push(data)
+        addData(data);
+        calculateMoney();
+        text.value='';
+        amount.value='';
+    }
+}
+function remove(id){
+    history = history.filter(history=>history.id !==id)
+    init();
+}
+
 //Comma
 function formatNumber(num) {return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') }
+//Randon ID
+function autoID(){
+    return Math.floor(Math.random()*1000000)
+}
 
 init();
