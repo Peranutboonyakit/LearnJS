@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -13,7 +14,7 @@
   --background: rgb(255, 255, 255);
   --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
 }
-[data-theme = 'dark']{
+[data-theme="dark"] {
   --primary-color: orange;
   --text-color: #fff;
   --text-color-second: rgba(255, 255, 225, 0.8);
@@ -71,22 +72,22 @@ a:focus {
   z-index: 100;
   position: fixed;
   right: 25px;
-  top: 30px
+  top: 30px;
 }
-.theme-switch-container span{
-    margin-right: 10px;
-    font-size: 1rem;
+.theme-switch-container span {
+  margin-right: 10px;
+  font-size: 1rem;
 }
-.toggle-text{
-    position: relative;
-    right: 60px;
+.toggle-text {
+  position: relative;
+  right: 60px;
 }
-i{
+i {
   position: relative;
   right: 70px;
 }
 
-.slider{
+.slider {
   background: var(--primary-color);
   bottom: 0;
   cursor: pointer;
@@ -97,9 +98,9 @@ i{
   width: 95px;
   transition: 0.3s;
 }
-.slider::before{
-  background:#fff;
-  content: '';
+.slider::before {
+  background: #fff;
+  content: "";
   bottom: 4px;
   height: 19px;
   left: 4px;
@@ -107,12 +108,39 @@ i{
   transition: 0.3s;
   width: 15px;
 }
-input:checked + .slider::before{
+input:checked + .slider::before {
   transform: translateX(73px);
 }
 .slider.round {
   border-radius: 20px;
 }
-.slider::before{
+.slider::before {
   border-radius: 50%;
 }
+
+.project-container{
+  display: flex;
+}
+.image-container{
+  border: 1px solid var(--text-color-second);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 10px 20px;
+  margin-right: 25px;
+  width: auto;
+  background-color: var(--background);
+}
+img{
+  width: 300px;
+  height: 300px;
+}
+.fab {
+  font-size: 100px;
+  margin-right: 50px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+.fab:hover {
+  color: var(--text-color);
+}
+

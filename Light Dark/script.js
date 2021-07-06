@@ -1,11 +1,20 @@
 const switchToggle = document.querySelector("input[type='checkbox']")
 const toggleIcon = document.getElementById('toggle-icon')
 const nav = document.getElementById('nav')
+const img1 = document.getElementById('img1')
+const img2 = document.getElementById('img2')
 
 function switchMode(e){
     //checked
-    e.target.checked ?  dark() : light() ;
+    if(e.target.checked){
+        dark();
+        imgSwitchMode('dark');
+    }else{
+        light();
+        imgSwitchMode('light')
+    }
 }
+
 //Dark Mode
 function dark(){
     toggleIcon.children[0].textContent = 'Dark';
@@ -20,4 +29,10 @@ function light(){
     document.documentElement.setAttribute('data-theme','light')
     nav.style.backgroundColor = 'rgb(255, 255, 255, 0.5)'
 }
+
+function imgSwitchMode(mode){
+    img1.src = `img/code_${mode}.svg`
+    img2.src = `img/coding_${mode}.svg`
+}
+
 switchToggle.addEventListener('change', switchMode);
