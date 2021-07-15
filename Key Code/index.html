@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="info">
+        Press Key<br>
+        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, necessitatibus?</span>
+    </div>
+    <div id="key"></div>
+
+    <script>
+        let info = document.getElementById('info'), 
+            ley = document.getElementById('key')
+
+        document.onkeydown = document.body.onkeydown = function(e){
+            e = e || window.event;
+            info.innerHTML = '';
+            key.innerHTML = e.keyCode || e.which;
+            return false;
+        }
+    </script>
+</body>
+</html>
